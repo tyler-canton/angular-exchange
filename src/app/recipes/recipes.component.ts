@@ -10,7 +10,6 @@ import { NgForm } from "@angular/forms";
   providers: [RecipeService]
 })
 export class RecipesComponent implements OnInit {
-  @ViewChild("form") signupForm: NgForm;
   questionDefault: string = "Tyler C";
   formData = {
     question: ""
@@ -18,14 +17,11 @@ export class RecipesComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-  onSurname() {
-    this.signupForm.form.patchValue({
-      question: this.questionDefault
-    });
-  }
-  onSubmit() {
-    console.log(this.signupForm.value);
-    this.formData.question = this.signupForm.form.value.question;
-    this.signupForm.reset();
+
+  onSubmit(signupForm) {
+    console.log(signupForm.value);
+    const { question } = signupForm.value;
+    this.formData.question = question;
+    signupForm.reset();
   }
 }
