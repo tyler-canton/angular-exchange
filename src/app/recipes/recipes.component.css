@@ -1,0 +1,7 @@
+.answer-main {
+  padding: 4em 0.25em 0;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
