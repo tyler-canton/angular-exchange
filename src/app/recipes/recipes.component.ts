@@ -1,7 +1,7 @@
-import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import { RecipeService } from "./recipe.service";
-import { NgForm } from "@angular/forms";
+import { ExchangeService } from "./exchange.service";
 
 @Component({
   selector: "app-recipes",
@@ -14,13 +14,21 @@ export class RecipesComponent implements OnInit {
   formData = {
     question: ""
   };
-  constructor() {}
+  constructor(private exchangeService: ExchangeService) {}
 
   ngOnInit() {}
 
   onSubmit(signupForm) {
     console.log(signupForm.value);
     const { question } = signupForm.value;
+    this.exchangeService.getExchangeQuestion(question).subscribe(
+      (data: any[]) => {
+        console.log(data);
+      },
+      err => {
+        console.log(err.message);
+      }
+    );
     this.formData.question = question;
     signupForm.reset();
   }

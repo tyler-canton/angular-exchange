@@ -1,3 +1,13 @@
 .cursor {
   cursor: pointer;
 }
+.navbar-header {
+  width: 225px;
+  .navbar-brand {
+    img {
+      height: 100%;
+    }
+    width: 100%;
+    padding: 0;
+  }
+}
