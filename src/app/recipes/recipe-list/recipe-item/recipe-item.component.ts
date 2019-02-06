@@ -1,3 +1,4 @@
+import { Questions } from './../../../shared/questions.model';
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Recipe } from '../../recipe.model';
@@ -8,7 +9,7 @@ import { Recipe } from '../../recipe.model';
   styleUrls: ['./recipe-item.component.css']
 })
 export class RecipeItemComponent implements OnInit {
-  @Input() recipe: Recipe;
+  @Input() question: Questions;
   @Input() index: number;
 
   ngOnInit() {

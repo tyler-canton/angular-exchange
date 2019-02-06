@@ -1,18 +1,18 @@
-import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
-import { Ingredient } from "../../shared/ingredient.model";
-import { ShoppingListService } from "../shopping-list.service";
-import { Subscription } from "rxjs";
-import { NgForm } from "@angular/forms";
+import { Ingredient } from '../../shared/ingredient.model';
+import { ShoppingListService } from '../shopping-list.service';
+import { Subscription } from 'rxjs';
+import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: "app-shopping-edit",
-  templateUrl: "./shopping-edit.component.html",
-  styleUrls: ["./shopping-edit.component.css"]
+  selector: 'app-shopping-edit',
+  templateUrl: './shopping-edit.component.html',
+  styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent implements OnInit {
   // Capture our form because we are not passing as a method param
-  @ViewChild("editForm") slForm: NgForm;
+  @ViewChild('editForm') slForm: NgForm;
   subscription: Subscription;
   editMode = false;
   editedItemIndex: number;

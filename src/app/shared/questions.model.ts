@@ -1,4 +1,4 @@
-import { Owner } from "./owner.model";
+import { Owner } from './owner.model';
 
 export class Questions {
   constructor(

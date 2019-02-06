@@ -1,35 +1,31 @@
-import { Component, OnInit } from "@angular/core";
+import { Questions } from './../shared/questions.model';
+import { Component, OnInit } from '@angular/core';
 
-import { RecipeService } from "./recipe.service";
-import { ExchangeService } from "./exchange.service";
-
+import { ExchangeService } from './exchange.service';
+import { NgForm } from '@angular/forms';
+// Provider utilized here because only parent and children need this service
 @Component({
-  selector: "app-recipes",
-  templateUrl: "./recipes.component.html",
-  styleUrls: ["./recipes.component.css"],
-  providers: [RecipeService]
+  selector: 'app-recipes',
+  templateUrl: './recipes.component.html',
+  styleUrls: ['./recipes.component.css'],
+  providers: [ExchangeService]
 })
 export class RecipesComponent implements OnInit {
-  questionDefault: string = "Tyler C";
-  formData = {
-    question: ""
-  };
-  constructor(private exchangeService: ExchangeService) {}
 
-  ngOnInit() {}
+  constructor(private exchangeService: ExchangeService) { }
 
-  onSubmit(signupForm) {
-    console.log(signupForm.value);
+  ngOnInit() { }
+
+  onSubmit(signupForm: NgForm) {
     const { question } = signupForm.value;
     this.exchangeService.getExchangeQuestion(question).subscribe(
       (data: any[]) => {
-        console.log(data);
+        this.exchangeService.passGetExchangeQuestionData.next(data);
       },
       err => {
         console.log(err.message);
       }
     );
-    this.formData.question = question;
     signupForm.reset();
   }
 }

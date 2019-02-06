@@ -1,9 +1,9 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+  <div class="col-xs-12">
     <form (ngSubmit)="onSubmit(form)" #form="ngForm">
       <div id="user-data">
         <div class="form-group">
-          <label for="username">Question</label>
+          <label for="username">Ask Stack Anything</label>
           <input
             type="text"
             id="question"
@@ -18,13 +18,7 @@
           </p>
         </div>
       </div>
-      <div class="form-group">
-        <label for="secret">Secret Questions</label>
-        <select id="secret" class="form-control" ngModel name="secret">
-          <option value="pet">Your first Pet?</option>
-          <option value="teacher">Your first teacher?</option>
-        </select>
-      </div>
+
       <button class="btn btn-primary" [disabled]="!form.valid" type="submit">
         Submit
       </button>

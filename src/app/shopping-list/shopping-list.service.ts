@@ -1,5 +1,5 @@
-import { Ingredient } from "../shared/ingredient.model";
-import { Subject } from "rxjs";
+import { Ingredient } from '../shared/ingredient.model';
+import { Subject } from 'rxjs';
 
 export class ShoppingListService {
   // ingredientsChanged = new EventEmitter<Ingredient[]>();
@@ -7,8 +7,8 @@ export class ShoppingListService {
   startedEditing = new Subject<number>();
 
   private ingredients: Ingredient[] = [
-    new Ingredient("Apples", 5),
-    new Ingredient("Tomatoes", 10)
+    new Ingredient('Apples', 5),
+    new Ingredient('Tomatoes', 10)
   ];
 
   getIngredients() {

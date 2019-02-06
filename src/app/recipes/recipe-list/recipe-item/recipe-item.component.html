@@ -4,13 +4,13 @@
   class="list-group-item cursor clearfix"
 >
   <div class="pull-left">
-    <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-    <p class="list-group-item-text">{{ recipe.description }}</p>
+    <h4 class="list-group-item-heading">{{ question.owner.display_name }}</h4>
+    <p class="list-group-item-text">{{ question.title | shorten: 75}}</p>
   </div>
   <span class="pull-right">
     <img
-      [src]="recipe.imagePath"
-      alt="{{ recipe.name }}"
+      [src]="question.owner.profile_image"
+      alt="{{ question.title | shorten:5 }}"
       class="img-responsive"
       style="max-height: 50px;"
     />
