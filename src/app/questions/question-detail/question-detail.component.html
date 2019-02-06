@@ -31,8 +31,9 @@
       <div class="list-group bg-info">
         <div class="list-group-item">
           <h4 class="list-group-item-heading">Accepted Answer</h4>
+
           <p *ngIf="answer" class="list-group-item-text">
-            {{ answer.body | shorten: 75 }}
+            {{ answer.body | shorten: 175 | sanitize }}
           </p>
         </div>
       </div>
