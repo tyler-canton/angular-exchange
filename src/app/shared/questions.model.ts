@@ -13,6 +13,7 @@ export class Questions {
     public score: number,
     public tags: any[],
     public title: string,
-    public view_count: number
-  ) {}
+    public view_count: number,
+    public accepted_answer_id?: number,
+  ) { }
 }

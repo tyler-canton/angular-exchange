@@ -5,6 +5,8 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/Rx';
 // tslint:disable-next-line:import-blacklist
 import { Subject, Observable } from 'rxjs/Rx';
+import { mergeMap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class ExchangeService {
@@ -19,9 +21,8 @@ export class ExchangeService {
   getExchangeQuestion(question: string) {
     return this.http
       .get(
-        `https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=${question}&site=stackoverflow`
-      )
-      .map((response: Response) => {
+        `${environment.apiHost}&intitle=${question}&site=stackoverflow`
+      ).map((response: Response) => {
         const data = response.json();
         return data.items;
       })

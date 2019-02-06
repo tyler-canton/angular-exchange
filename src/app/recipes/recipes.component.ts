@@ -3,12 +3,13 @@ import { Component, OnInit } from '@angular/core';
 
 import { ExchangeService } from './exchange.service';
 import { NgForm } from '@angular/forms';
+import { RecipeService } from './recipe.service';
 // Provider utilized here because only parent and children need this service
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.css'],
-  providers: [ExchangeService]
+  providers: [ExchangeService, RecipeService]
 })
 export class RecipesComponent implements OnInit {
 
