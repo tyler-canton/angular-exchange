@@ -4,3 +4,6 @@
   box-shadow: 2px 2px 2px #ccc;
   border: 1px solid #ccc;
 }
+.bg-info {
+  overflow: hidden;
+}
