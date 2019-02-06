@@ -6,8 +6,7 @@ export class SanitizeHtmlPipe implements PipeTransform {
   constructor(private _sanitizer: DomSanitizer) {}
 
   transform(value: string): SafeHtml {
-    return this._sanitizer.bypassSecurityTrustHtml(
-      value.replace(/<[^>]*>/g, '')
-    );
+    let newValue = value.replace(/<[^>]*>/g, '');
+    return newValue;
   }
 }
