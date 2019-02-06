@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { QuestionStartComponent } from './questions/question-start/question-start.component';
 import { ShortenPipe } from './shared/shorten.pipe';
 import { QuestionListComponent } from './questions/question-list/question-list.component';
+import { SanitizeHtmlPipe } from './shared/sanitize.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { QuestionListComponent } from './questions/question-list/question-list.c
     QuestionItemComponent,
     DropdownDirective,
     QuestionStartComponent,
-    ShortenPipe
+    ShortenPipe,
+    SanitizeHtmlPipe
   ],
   imports: [BrowserModule, FormsModule, HttpModule, AppRoutingModule],
   providers: [],

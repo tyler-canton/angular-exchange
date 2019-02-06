@@ -30,4 +30,16 @@ export class ExchangeService {
         return Observable.throw('Something went wrong');
       });
   }
+
+  getExchangeAnswer(questionId: number) {
+    return this.http
+      .get(environment.apiHostAnswer(questionId))
+      .map((response: Response) => {
+        const data = response.json();
+        return data.items[0];
+      })
+      .catch((error: Response) => {
+        return Observable.throw('Something went wrong');
+      });
+  }
 }
