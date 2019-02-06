@@ -5,36 +5,29 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { QuestionComponent } from './questions/question.component';
+import { QuestionDetailComponent } from './questions/question-detail/question-detail.component';
+import { QuestionItemComponent } from './questions/question-list/question-item/question-item.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { QuestionStartComponent } from './questions/question-start/question-start.component';
 import { ShortenPipe } from './shared/shorten.pipe';
-import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { QuestionListComponent } from './questions/question-list/question-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
+    QuestionComponent,
+    QuestionListComponent,
+    QuestionDetailComponent,
+    QuestionItemComponent,
     DropdownDirective,
-    RecipeStartComponent,
-    RecipeEditComponent,
+    QuestionStartComponent,
     ShortenPipe
   ],
   imports: [BrowserModule, FormsModule, HttpModule, AppRoutingModule],
-  providers: [ShoppingListService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

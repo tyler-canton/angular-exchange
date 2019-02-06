@@ -1,25 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { RecipesComponent } from './recipes/recipes.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { QuestionComponent } from './questions/question.component';
+import { QuestionStartComponent } from './questions/question-start/question-start.component';
+import { QuestionDetailComponent } from './questions/question-detail/question-detail.component';
 // pathMatch is designed to ensure a unique root
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/recipes', pathMatch: 'full' },
+  { path: '', redirectTo: '/questions', pathMatch: 'full' },
   {
-    path: 'recipes',
-    component: RecipesComponent,
+    path: 'questions',
+    component: QuestionComponent,
     children: [
-      { path: '', component: RecipeStartComponent },
-      { path: 'new', component: RecipeEditComponent },
-      { path: ':id', component: RecipeDetailComponent },
-      { path: ':id/edit', component: RecipeEditComponent }
+      { path: '', component: QuestionStartComponent },
+      { path: 'detail', component: QuestionDetailComponent }
     ]
-  },
-  { path: 'shopping-list', component: ShoppingListComponent }
+  }
 ];
 
 @NgModule({
