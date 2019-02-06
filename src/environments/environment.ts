@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiHost: 'https://api.stackexchange.com/2.2/search/advanced?order=desc&sort=activity&answers=1&accepted=True'
+  apiHost:
+    'https://api.stackexchange.com/2.2/search/advanced?order=desc&sort=activity&answers=1&accepted=True'
 };
 
 /*
