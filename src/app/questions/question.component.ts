@@ -25,6 +25,5 @@ export class QuestionComponent implements OnInit {
         console.log(err.message);
       }
     );
-    signupForm.reset();
   }
 }
