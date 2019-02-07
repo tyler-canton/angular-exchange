@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiHost:
-    'https://api.stackexchange.com/2.2/search/advanced?order=desc&sort=activity&answers=1&accepted=True',
+    'https://api.stackexchange.com/2.2/search/advanced?order=desc&sort=activity&accepted=True',
   worker: (brand: string) => console.log(`${brand}`),
   apiHostAnswer: (id: number) =>
     `https://api.stackexchange.com/2.2/answers/${id}?order=desc&sort=activity&site=stackoverflow&filter=!b1MMEr*sm-hgcX `

@@ -20,7 +20,7 @@ export class ExchangeService {
       .get(
         `${
           environment.apiHost
-        }&intitle=${question}&site=stackoverflow&filter=withbody`
+        }&title=${question}&site=stackoverflow&filter=!9Z(-wzu0T`
       )
       .map((response: Response) => {
         const data = response.json();
