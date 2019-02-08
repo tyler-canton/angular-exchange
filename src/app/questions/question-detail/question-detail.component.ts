@@ -17,16 +17,10 @@ export class QuestionDetailComponent implements OnInit, OnDestroy {
   answer: Answer;
   private customSubscription: Subscription;
   constructor(
-    private exchangeService: ExchangeService,
-    private route: ActivatedRoute,
-    private router: Router
+    private exchangeService: ExchangeService
   ) {}
 
   ngOnInit() {
-    // fetch from the question service getting the id from params
-    // this.route.params.subscribe((params: Params) => {
-    //   this.create_date = +params['id'];
-    // });
     this.customSubscription = this.exchangeService.passGetExchangeQuestionData.subscribe(
       questionData => {
         this.question = questionData;

@@ -1,8 +1,10 @@
 <div class="row">
   <div class="col-xs-12">
-    <app-question-item
-      *ngFor="let questionEl of questions; let i = index"
-      [question]="questionEl"
-    ></app-question-item>
+    <div *ngIf="questions?.length === 0">
+      <div class="jumbotron center-block">
+        <h1>Sorry, next question...</h1>
+      </div>
+    </div>
+    <app-question-item *ngFor="let questionEl of questions; let i = index" [question]="questionEl"></app-question-item>
   </div>
 </div>

@@ -17,10 +17,7 @@ export class ExchangeService {
 
   getExchangeQuestion(question: string) {
     return this.http
-      .get(
-        `${
-          environment.apiHost
-        }&title=${question}&site=stackoverflow&filter=!9Z(-wzu0T`
+      .get(environment.apiHostQuestion(question)
       )
       .map((response: Response) => {
         const data = response.json();
