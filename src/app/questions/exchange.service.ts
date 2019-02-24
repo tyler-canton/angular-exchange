@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class ExchangeService {
+  // used to pass data to another component
   passGetExchangeQuestionsData = new Subject<Questions[]>();
   passGetExchangeQuestionData = new Subject<Questions>();
 

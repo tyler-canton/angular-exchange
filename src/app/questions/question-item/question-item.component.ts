@@ -1,8 +1,9 @@
-import { Questions } from '../../../shared/questions.model';
+import { AuthService } from './../../auth/auth.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
-import { ExchangeService } from '../../exchange.service';
+import { Questions } from 'src/app/shared/questions.model';
+import { ExchangeService } from '../exchange.service';
 
 @Component({
   selector: 'app-question-item',
@@ -14,11 +15,14 @@ export class QuestionItemComponent implements OnInit {
 
   constructor(
     private exchangeService: ExchangeService,
+    private authService: AuthService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
-
-  ngOnInit() {}
+  ) { }
+  isLoggedIn: boolean;
+  ngOnInit() {
+    this.isLoggedIn = this.authService.isAuthenticated();
+  }
 
   onQuestionDetail(question) {
     this.exchangeService.passGetExchangeQuestionData.next(question);

@@ -17,6 +17,7 @@ export class QuestionComponent implements OnInit {
 
   onSubmit(signupForm: NgForm) {
     const { question } = signupForm.value;
+    // Getting form data and passing to the service which is handed to a subscription to sync data
     this.exchangeService.getExchangeQuestion(question).subscribe(
       (data: any[]) => {
         this.exchangeService.passGetExchangeQuestionsData.next(data);
